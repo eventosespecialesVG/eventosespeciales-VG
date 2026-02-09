@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Configuración básica -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- SEO: lo que Google lee -->
+<title>Eventos Especiales VG - Organización de eventos</title>
+<meta name="description" content="Eventos Especiales VG ofrece buffet, comparsa, pantallas LED y sonido premium para tus celebraciones.">
+<meta name="keywords" content="eventos, buffet, comparsa, pantallas LED, sonido, Costa Rica">
+<meta name="author" content="Eventos Especiales VG">
+<!-- Estilos -->
+<link rel="stylesheet" href="/static/css/styles.css">
+<!-- Icono de pestaña (favicon) -->
+<link rel="icon" href="/static/img/favicon.png" type="image/png">
+</head>
+<body>
+
+  {% include 'navbar.html' %}
+<!-- Hero con fondo de pantalla completa -->
+<header class="hero-black">
+<div class="hero-overlay-box">
+<h1>Eventos Especiales VG</h1>
+<p>Tu idea, nuestra ejecución, lo hacemos realidad</p>
+<a href="https://wa.me/50663524165" class="btn-gold">Contáctanos</a>
+</div>
+</header>
+<!-- Carrusel dinámico -->
+<section class="section carrusel">
+<h2>Galería de eventos</h2>
+<div class="carousel" aria-label="Carrusel de imágenes">
+<div class="slide"><img src="/static/img/comparsa.jpg" alt="Comparsa llena de energía"></div>
+<div class="slide"><img src="/static/img/comparsa2.jpg" alt="Comparsa y baile"></div>
+<div class="slide"><img src="/static/img/pantallas.jpg" alt="Pantallas LED de última generación"></div>
+<div class="slide"><img src="/static/img/pantallaysonido.jpg" alt="Pantallas y sonido profesional"></div>
+<div class="slide"><img src="/static/img/sonido.jpg" alt="Sistema de sonido premium"></div>
+</div>
+<div class="carousel-controls">
+<button class="carousel-btn prev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+<button class="carousel-btn next" aria-label="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+</section>
+<!-- Quiénes somos -->
+<section class="section quienes-somos">
+<h2>Quiénes somos</h2>
+<p>
+
+      En <strong>Eventos Especiales VG</strong>, convertimos ideas en experiencias memorables. Nuestro equipo combina creatividad,
+
+      innovación y atención al detalle para que cada evento brille con personalidad propia.
+</p>
+<div class="qs-grid">
+<div class="qs-item">
+<h3>Misión</h3>
+<p>lo que quiera poner kenneth</p>
+</div>
+<div class="qs-item">
+<h3>Valores</h3>
+<p>lo que quiera poner kenneth</p>
+</div>
+<div class="qs-item">
+<h3>Diferencial</h3>
+<p>blablabla</p>
+</div>
+</div>
+</section>
+<!-- Servicios -->
+<section class="section servicios">
+<h2>Servicios</h2>
+<p class="section-subtitle">Gastronomía y ambientación para cada tipo de evento</p>
+<div class="services-grid">
+<figure class="service-card">
+<img src="/static/img/buffet1.jpg" alt="Buffet de lujo 1">
+<figcaption>Buffet de lujo</figcaption>
+</figure>
+<figure class="service-card">
+<img src="/static/img/buffet2.jpg" alt="Buffet de lujo 2">
+<figcaption>Variedad gastronómica</figcaption>
+</figure>
+<figure class="service-card">
+<img src="/static/img/catering.jpg" alt="Catering profesional">
+<figcaption>Catering profesional</figcaption>
+</figure>
+<figure class="service-card">
+<img src="/static/img/charcuteria.jpg" alt="Charcutería premium">
+<figcaption>Charcutería premium</figcaption>
+</figure>
+<figure class="service-card">
+<img src="/static/img/ensalada.jpg" alt="Ensaladas y opciones frescas">
+<figcaption>Opciones frescas</figcaption>
+</figure>
+</div>
+</section>
+
+  {% include 'contacto.html' %}
+<!-- Footer -->
+<footer>
+<div class="footer-top">
+<div class="social-buttons">
+<a href="https://facebook.com/eventosespecialesvg" target="_blank" class="social-icon" aria-label="Facebook">
+<i class="fab fa-facebook-f"></i>
+</a>
+<a href="https://instagram.com/eventosespecialesvg" target="_blank" class="social-icon" aria-label="Instagram">
+<i class="fab fa-instagram"></i>
+</a>
+<a href="https://wa.me/50663524165" target="_blank" class="social-icon" aria-label="WhatsApp">
+<i class="fab fa-whatsapp"></i>
+</a>
+</div>
+</div>
+<p class="footer-copy">&copy; 2026 Eventos Especiales VG</p>
+</footer>
+<script>
+
+    // Controles simples del carrusel (scroll horizontal)
+
+    const carousel = document.querySelector('.carousel');
+
+    const prev = document.querySelector('.carousel-btn.prev');
+
+    const next = document.querySelector('.carousel-btn.next');
+
+    if (carousel && prev && next) {
+
+      prev.addEventListener('click', () => {
+
+        carousel.scrollBy({ left: -320, behavior: 'smooth' });
+
+      });
+
+      next.addEventListener('click', () => {
+
+        carousel.scrollBy({ left: 320, behavior: 'smooth' });
+
+      });
+
+    }
+</script>
+</body>
+</html>
+ 
