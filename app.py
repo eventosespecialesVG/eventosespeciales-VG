@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 
-# Datos del correo (se rellenan desde Render)
+# Variables de entorno de Render
 EMAIL = os.environ.get("EMAIL")
 PASSWORD = os.environ.get("PASSWORD")
 
@@ -48,18 +48,20 @@ Mensaje:
         msg["Reply-To"] = correo
 
         try:
-    servidor = smtplib.SMTP_SSL("smtp.gmail.com", 465)
-    servidor.login(EMAIL, PASSWORD)
-    servidor.send_message(msg)
-    servidor.quit()
+            servidor = smtplib.SMTP_SSL("smtp.gmail.com", 465)
+            servidor.login(EMAIL, PASSWORD)
+            servidor.send_message(msg)
+            servidor.quit()
 
-    return render_template("contacto.html", enviado=True)
+            return render_template("contacto.html", enviado=True)
+
         except Exception as e:
             print("Error al enviar el correo:", e)
-            return "Error al enviar el correo. Revise la configuración del servidor."
+            return f"Error al enviar el correo: {e}"
 
     return render_template("contacto.html", enviado=False)
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    puerto = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=puerto)
