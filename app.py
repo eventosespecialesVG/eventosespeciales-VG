@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request
 import smtplib
 from email.mime.text import MIMEText
+import os
 
 app = Flask(__name__)
 
-EMAIL = "ventasvg2022@gmail.com"
-PASSWORD = "jmrz wyeg skxa yees"
+# Datos del correo (se rellenan desde Render)
+EMAIL = os.environ.get("EMAIL")
+PASSWORD = os.environ.get("PASSWORD")
 
 
 @app.route('/')
@@ -48,15 +50,18 @@ Mensaje:
         try:
             servidor = smtplib.SMTP("smtp.gmail.com", 587)
             servidor.starttls()
+
             servidor.login(EMAIL, PASSWORD)
+
             servidor.send_message(msg)
+
             servidor.quit()
 
             return render_template("contacto.html", enviado=True)
 
         except Exception as e:
             print("Error al enviar el correo:", e)
-            return f"Error al enviar el correo: {e}"
+            return "Error al enviar el correo. Revise la configuración del servidor."
 
     return render_template("contacto.html", enviado=False)
 
