@@ -48,17 +48,12 @@ Mensaje:
         msg["Reply-To"] = correo
 
         try:
-            servidor = smtplib.SMTP("smtp.gmail.com", 587)
-            servidor.starttls()
+    servidor = smtplib.SMTP_SSL("smtp.gmail.com", 465)
+    servidor.login(EMAIL, PASSWORD)
+    servidor.send_message(msg)
+    servidor.quit()
 
-            servidor.login(EMAIL, PASSWORD)
-
-            servidor.send_message(msg)
-
-            servidor.quit()
-
-            return render_template("contacto.html", enviado=True)
-
+    return render_template("contacto.html", enviado=True)
         except Exception as e:
             print("Error al enviar el correo:", e)
             return "Error al enviar el correo. Revise la configuración del servidor."
