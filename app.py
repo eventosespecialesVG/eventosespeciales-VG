@@ -1,13 +1,14 @@
 from flask import Flask, render_template, request
+import os
 import smtplib
 from email.mime.text import MIMEText
-import os
+from email.mime.multipart import MIMEMultipart
 
 app = Flask(__name__)
 
-# Variables de entorno de Render
-EMAIL = os.environ.get("EMAIL")
-PASSWORD = os.environ.get("PASSWORD")
+# Datos de Gmail desde las variables de entorno de Render
+EMAIL = os.environ.get("ventasvg2022@gmail.com")
+PASSWORD = os.environ.get("jmrz wyeg skxa yees")
 
 
 @app.route('/')
@@ -29,39 +30,69 @@ def contacto():
         correo = request.form['correo']
         mensaje = request.form['mensaje']
 
-        cuerpo = f"""
-Nuevo mensaje desde la página web
+        try:
+            # Crear el correo
+            email = MIMEMultipart()
+
+            email["From"] = EMAIL
+            email["To"] = EMAIL
+            email["Subject"] = "Nuevo mensaje - Eventos Especiales VG"
+            email["Reply-To"] = correo
+
+            contenido = f"""
+Nuevo mensaje desde la página web de Eventos Especiales VG
 
 Nombre: {nombre}
 
 Correo del cliente: {correo}
 
 Mensaje:
-
 {mensaje}
 """
 
-        msg = MIMEText(cuerpo, "plain", "utf-8")
-        msg["Subject"] = "Nuevo mensaje - Eventos Especiales VG"
-        msg["From"] = EMAIL
-        msg["To"] = EMAIL
-        msg["Reply-To"] = correo
+            email.attach(
+                MIMEText(contenido, "plain", "utf-8")
+            )
 
-        try:
-            servidor = smtplib.SMTP_SSL("smtp.gmail.com", 465)
+            # Conectar con Gmail
+            servidor = smtplib.SMTP("smtp.gmail.com", 587)
+            servidor.starttls()
+
+            # Iniciar sesión
             servidor.login(EMAIL, PASSWORD)
-            servidor.send_message(msg)
+
+            # Enviar correo
+            servidor.send_message(email)
+
             servidor.quit()
 
-            return render_template("contacto.html", enviado=True)
+            print("Correo enviado correctamente")
+
+            return render_template(
+                "contacto.html",
+                enviado=True
+            )
 
         except Exception as e:
-            print("Error al enviar el correo:", e)
-            return f"Error al enviar el correo: {e}"
 
-    return render_template("contacto.html", enviado=False)
+            print("ERROR AL ENVIAR CORREO:", e)
+
+            return render_template(
+                "contacto.html",
+                enviado=False,
+                error=True
+            )
+
+    return render_template(
+        "contacto.html",
+        enviado=False
+    )
 
 
 if __name__ == "__main__":
     puerto = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=puerto)
+
+    app.run(
+        host="0.0.0.0",
+        port=puerto
+    )
