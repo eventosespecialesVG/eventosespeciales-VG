@@ -29,7 +29,6 @@ def contacto():
         mensaje = request.form['mensaje']
 
         try:
-            # Configuración de Brevo
             configuracion = sib_api_v3_sdk.Configuration()
             configuracion.api_key['api-key'] = BREVO_API_KEY
 
@@ -37,7 +36,6 @@ def contacto():
                 sib_api_v3_sdk.ApiClient(configuracion)
             )
 
-            # Crear correo
             email = sib_api_v3_sdk.SendSmtpEmail(
                 sender={
                     "name": "Eventos Especiales VG",
@@ -66,7 +64,6 @@ def contacto():
                 """
             )
 
-            # Enviar correo
             api_instance.send_transac_email(email)
 
             print("Correo enviado correctamente")

@@ -1,2 +1,3 @@
 flask
 gunicorn
+sib-api-v3-sdk
