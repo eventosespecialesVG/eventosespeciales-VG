@@ -6,7 +6,7 @@ from sib_api_v3_sdk.rest import ApiException
 app = Flask(__name__)
 
 # Clave de API de Brevo
-BREVO_API_KEY = os.environ.get("BREVO_APP_KEY")
+BREVO_API_KEY = os.environ.get("BREVO_API_KEY")
 
 
 @app.route('/')
