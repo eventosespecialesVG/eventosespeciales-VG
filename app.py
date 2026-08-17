@@ -1,14 +1,12 @@
 from flask import Flask, render_template, request
 import os
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
 
 app = Flask(__name__)
 
-# Datos de Gmail desde las variables de entorno de Render
-EMAIL = os.environ.get("ventasvg2022@gmail.com")
-PASSWORD = os.environ.get("jmrz wyeg skxa yees")
+# Clave de API de Brevo
+BREVO_API_KEY = os.environ.get("BREVO_APP_KEY")
 
 
 @app.route('/')
@@ -31,40 +29,45 @@ def contacto():
         mensaje = request.form['mensaje']
 
         try:
-            # Crear el correo
-            email = MIMEMultipart()
+            # Configuración de Brevo
+            configuracion = sib_api_v3_sdk.Configuration()
+            configuracion.api_key['api-key'] = BREVO_API_KEY
 
-            email["From"] = EMAIL
-            email["To"] = EMAIL
-            email["Subject"] = "Nuevo mensaje - Eventos Especiales VG"
-            email["Reply-To"] = correo
-
-            contenido = f"""
-Nuevo mensaje desde la página web de Eventos Especiales VG
-
-Nombre: {nombre}
-
-Correo del cliente: {correo}
-
-Mensaje:
-{mensaje}
-"""
-
-            email.attach(
-                MIMEText(contenido, "plain", "utf-8")
+            api_instance = sib_api_v3_sdk.TransactionalEmailsApi(
+                sib_api_v3_sdk.ApiClient(configuracion)
             )
 
-            # Conectar con Gmail
-            servidor = smtplib.SMTP("smtp.gmail.com", 587)
-            servidor.starttls()
+            # Crear correo
+            email = sib_api_v3_sdk.SendSmtpEmail(
+                sender={
+                    "name": "Eventos Especiales VG",
+                    "email": "ventasvg2022@gmail.com"
+                },
+                to=[
+                    {
+                        "email": "ventasvg2022@gmail.com"
+                    }
+                ],
+                reply_to={
+                    "email": correo,
+                    "name": nombre
+                },
+                subject="Nuevo mensaje - Eventos Especiales VG",
+                html_content=f"""
+                <h2>Nuevo mensaje desde la página web</h2>
 
-            # Iniciar sesión
-            servidor.login(EMAIL, PASSWORD)
+                <p><strong>Nombre:</strong> {nombre}</p>
+
+                <p><strong>Correo del cliente:</strong> {correo}</p>
+
+                <p><strong>Mensaje:</strong></p>
+
+                <p>{mensaje}</p>
+                """
+            )
 
             # Enviar correo
-            servidor.send_message(email)
-
-            servidor.quit()
+            api_instance.send_transac_email(email)
 
             print("Correo enviado correctamente")
 
@@ -73,9 +76,19 @@ Mensaje:
                 enviado=True
             )
 
+        except ApiException as e:
+
+            print("ERROR DE BREVO:", e)
+
+            return render_template(
+                "contacto.html",
+                enviado=False,
+                error=True
+            )
+
         except Exception as e:
 
-            print("ERROR AL ENVIAR CORREO:", e)
+            print("ERROR:", e)
 
             return render_template(
                 "contacto.html",
