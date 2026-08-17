@@ -8,6 +8,9 @@ app = Flask(__name__)
 # Clave de API de Brevo
 BREVO_API_KEY = os.environ.get("BREVO_API_KEY")
 
+print("BREVO_API_KEY configurada:", bool(BREVO_API_KEY))
+print("Longitud de la API KEY:", len(BREVO_API_KEY) if BREVO_API_KEY else 0)
+
 
 @app.route('/')
 def index():
