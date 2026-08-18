@@ -21,7 +21,16 @@ def index():
 def servicios():
     return render_template('servicios.html')
 
+#google
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('static', 'sitemap.xml', mimetype='application/xml')
 
+
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory('static', 'robots.txt', mimetype='text/plain')
+    
 # Verificación de Google
 @app.route('/googledf2a635172360864.html')
 def google_verification():
