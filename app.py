@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 import os
 import sib_api_v3_sdk
 from sib_api_v3_sdk.rest import ApiException
@@ -20,6 +20,15 @@ def index():
 @app.route('/servicios')
 def servicios():
     return render_template('servicios.html')
+
+
+# Verificación de Google
+@app.route('/googledf2a635172360864.html')
+def google_verification():
+    return send_from_directory(
+        'static',
+        'googledf2a635172360864.html'
+    )
 
 
 @app.route('/contacto', methods=['GET', 'POST'])
