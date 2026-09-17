@@ -5,292 +5,717 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Servicios - Eventos Especiales VG</title>
+    <title>Servicios | Eventos Especiales VG</title>
 
-    <meta
-        name="description"
-        content="Conocé los servicios de Eventos Especiales VG: catering, buffet, comparsa, pantallas LED, sonido, toldos, decoración y más."
-    >
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/styles.css') }}">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
-
-    <link rel="icon" href="/static/img/favicon.png" type="image/png">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-{% include 'navbar.html' %}
+    {% include 'navbar.html' %}
 
-<section class="section servicios-page">
 
-    <h2>Servicios que ofrecemos</h2>
+    <main class="services-page">
 
-    <p class="services-intro">
-        En Eventos Especiales VG contamos con diferentes opciones para hacer
-        de cada celebración una experiencia especial, cuidando cada detalle
-        desde la gastronomía hasta la ambientación y el entretenimiento.
-    </p>
+        <!-- INTRO -->
+        <section class="services-intro">
 
-    <div class="services-diff-grid">
+            <span class="services-eyebrow">
+                EVENTOS ESPECIALES VG
+            </span>
 
-        <!-- BUFFET -->
-        <div class="service-card buffet">
-            <img src="/static/img/buffet1.jpg" alt="Buffet de lujo">
+            <h1>Nuestros servicios</h1>
 
-            <div class="overlay">
-                <i class="fa-solid fa-utensils"></i>
-                <h3>Buffet de lujo</h3>
-                <p>
-                    Opciones gastronómicas variadas para acompañar
-                    celebraciones de todo tipo.
-                </p>
-            </div>
-        </div>
+            <p>
+                Todo lo que necesitás para crear un evento especial,
+                desde la alimentación y el entretenimiento hasta el
+                equipo y los elementos necesarios para tu celebración.
+            </p>
 
-        <!-- CHARCUTERÍA -->
-        <div class="service-card buffet">
-            <img src="/static/img/charcuteria.jpg" alt="Charcutería">
+        </section>
 
-            <div class="overlay">
-                <i class="fa-solid fa-cheese"></i>
-                <h3>Charcutería</h3>
-                <p>
-                    Presentaciones cuidadas y variedad de opciones
-                    para compartir.
-                </p>
-            </div>
-        </div>
 
-        <!-- EMPLATADO -->
-        <div class="service-card buffet">
-            <img src="/static/img/emplatado.jpg" alt="Servicio de emplatado">
+        <!-- CUATRO CATEGORÍAS -->
+        <section class="services-categories">
 
-            <div class="overlay">
-                <i class="fa-solid fa-plate-wheat"></i>
-                <h3>Emplatado</h3>
-                <p>
-                    Presentación elegante de los alimentos para
-                    darle un toque especial a cada evento.
-                </p>
-            </div>
-        </div>
+            <!-- AUDIOVISUALES -->
+            <a href="#audiovisuales" class="category-card">
 
-        <!-- ENSALADAS -->
-        <div class="service-card buffet">
-            <img src="/static/img/ensalada.jpg" alt="Ensaladas">
+                <div class="category-image">
+                    <img
+                        src="{{ url_for('static', filename='img/pantallaysonido.jpg') }}"
+                        alt="Audiovisuales para eventos">
+                </div>
 
-            <div class="overlay">
-                <i class="fa-solid fa-leaf"></i>
-                <h3>Opciones frescas</h3>
-                <p>
-                    Ensaladas y acompañamientos frescos para complementar
-                    diferentes propuestas gastronómicas.
-                </p>
-            </div>
-        </div>
+                <div class="category-content">
 
-        <!-- COMPARSA -->
-        <div class="service-card comparsa">
-            <img src="/static/img/comparsa.jpg" alt="Comparsa y animación">
+                    <span>01</span>
 
-            <div class="overlay">
-                <i class="fa-solid fa-masks-theater"></i>
-                <h3>Comparsa y animación</h3>
-                <p>
-                    Ritmo, baile y energía para darle vida
-                    a la celebración.
-                </p>
-            </div>
-        </div>
+                    <h2>Audiovisuales</h2>
 
-        <!-- COMPARSA 2 -->
-        <div class="service-card comparsa">
-            <img src="/static/img/comparsa2.jpg" alt="Comparsa">
+                    <p>
+                        Pantallas y sonido para complementar la
+                        experiencia de tu evento.
+                    </p>
 
-            <div class="overlay">
-                <i class="fa-solid fa-music"></i>
-                <h3>Entretenimiento</h3>
-                <p>
-                    Animación para crear un ambiente dinámico
-                    y lleno de energía.
-                </p>
-            </div>
-        </div>
+                </div>
 
-        <!-- PANTALLAS -->
-        <div class="service-card pantallas">
-            <img src="/static/img/pantallas.jpg" alt="Pantallas LED">
-
-            <div class="overlay">
-                <i class="fa-solid fa-tv"></i>
-                <h3>Pantallas LED</h3>
-                <p>
-                    Soluciones visuales para darle mayor impacto
-                    a tu evento.
-                </p>
-            </div>
-        </div>
-
-        <!-- PANTALLAS Y SONIDO -->
-        <div class="service-card pantallas">
-            <img src="/static/img/pantallaysonido.jpg" alt="Pantallas y sonido">
-
-            <div class="overlay">
-                <i class="fa-solid fa-display"></i>
-                <h3>Pantallas y sonido</h3>
-                <p>
-                    Una combinación de imagen y audio para
-                    una experiencia más completa.
-                </p>
-            </div>
-        </div>
-
-        <!-- SONIDO -->
-        <div class="service-card sonido">
-            <img src="/static/img/sonido.jpg" alt="Sonido profesional">
-
-            <div class="overlay">
-                <i class="fa-solid fa-volume-high"></i>
-                <h3>Sonido profesional</h3>
-                <p>
-                    Audio claro y potente para acompañar
-                    cada momento de la celebración.
-                </p>
-            </div>
-        </div>
-
-        <!-- SHEFFINS -->
-        <div class="service-card buffet">
-            <img src="/static/img/sheffins.jpg" alt="Servicio gastronómico">
-
-            <div class="overlay">
-                <i class="fa-solid fa-kitchen-set"></i>
-                <h3>Servicio gastronómico</h3>
-                <p>
-                    Equipamiento y presentación para mantener
-                    los alimentos listos durante el evento.
-                </p>
-            </div>
-        </div>
-
-        <!-- HIELERA -->
-        <div class="service-card decoracion">
-            <img src="/static/img/hielera.jpg" alt="Hielera para eventos">
-
-            <div class="overlay">
-                <i class="fa-solid fa-glass-water"></i>
-                <h3>Hieleras</h3>
-                <p>
-                    Soluciones prácticas para mantener bebidas
-                    listas y a la temperatura adecuada.
-                </p>
-            </div>
-        </div>
-
-        <!-- TOLDOS -->
-        <div class="service-card toldos">
-            <img src="/static/img/toldolindo.jpg" alt="Toldos para eventos">
-
-            <div class="overlay">
-                <i class="fa-solid fa-tent"></i>
-                <h3>Toldos</h3>
-                <p>
-                    Espacios protegidos y preparados para
-                    diferentes tipos de celebraciones.
-                </p>
-            </div>
-        </div>
-
-        <!-- TOLDO 1 -->
-        <div class="service-card toldos">
-            <img src="/static/img/toldo1.jpg" alt="Montaje de toldo">
-
-            <div class="overlay">
-                <i class="fa-solid fa-umbrella"></i>
-                <h3>Montaje de toldos</h3>
-                <p>
-                    Opciones de montaje para adaptar el espacio
-                    a las necesidades del evento.
-                </p>
-            </div>
-        </div>
-
-        <!-- MESA DE DULCES -->
-        <div class="service-card decoracion">
-            <img src="/static/img/mesadedulces.jpg" alt="Mesa de dulces">
-
-            <div class="overlay">
-                <i class="fa-solid fa-cake-candles"></i>
-                <h3>Mesa de dulces</h3>
-                <p>
-                    Presentaciones dulces para complementar
-                    celebraciones y momentos especiales.
-                </p>
-            </div>
-        </div>
-
-        <!-- CENTROS DE MESA -->
-        <div class="service-card decoracion">
-            <img src="/static/img/centro.jpg" alt="Centros de mesa">
-
-            <div class="overlay">
-                <i class="fa-solid fa-gem"></i>
-                <h3>Centros de mesa</h3>
-                <p>
-                    Detalles decorativos para darle personalidad
-                    y elegancia a cada espacio.
-                </p>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-<footer>
-    <div class="footer-top">
-        <div class="social-buttons">
-
-            <a
-                href="https://facebook.com/eventosespecialesvg"
-                target="_blank"
-                class="social-icon"
-                aria-label="Facebook"
-            >
-                <i class="fab fa-facebook-f"></i>
             </a>
 
-            <a
-                href="https://instagram.com/eventosespecialesvg"
-                target="_blank"
-                class="social-icon"
-                aria-label="Instagram"
-            >
-                <i class="fab fa-instagram"></i>
+
+            <!-- CATERING -->
+            <a href="#catering" class="category-card">
+
+                <div class="category-image">
+                    <img
+                        src="{{ url_for('static', filename='img/buffet1.jpg') }}"
+                        alt="Catering Service">
+                </div>
+
+                <div class="category-content">
+
+                    <span>02</span>
+
+                    <h2>Catering Service</h2>
+
+                    <p>
+                        Opciones gastronómicas preparadas para
+                        diferentes tipos de celebraciones.
+                    </p>
+
+                </div>
+
             </a>
 
-            <a
-                href="https://wa.me/50663524165"
-                target="_blank"
-                class="social-icon"
-                aria-label="WhatsApp"
-            >
-                <i class="fab fa-whatsapp"></i>
+
+            <!-- SHOW -->
+            <a href="#show" class="category-card">
+
+                <div class="category-image">
+                    <img
+                        src="{{ url_for('static', filename='img/comparsa.jpg') }}"
+                        alt="Show y comparsa">
+                </div>
+
+                <div class="category-content">
+
+                    <span>03</span>
+
+                    <h2>Show</h2>
+
+                    <p>
+                        Entretenimiento y animación para darle
+                        energía a tu celebración.
+                    </p>
+
+                </div>
+
             </a>
 
-        </div>
-    </div>
 
-    <p class="footer-copy">
-        &copy; 2026 Eventos Especiales VG
-    </p>
-</footer>
+            <!-- ALQUILER -->
+            <a href="#alquiler" class="category-card">
+
+                <div class="category-image">
+                    <img
+                        src="{{ url_for('static', filename='img/toldolindo.jpg') }}"
+                        alt="Alquiler para eventos">
+                </div>
+
+                <div class="category-content">
+
+                    <span>04</span>
+
+                    <h2>Alquiler</h2>
+
+                    <p>
+                        Elementos y equipos para complementar
+                        el montaje de tu evento.
+                    </p>
+
+                </div>
+
+            </a>
+
+        </section>
+
+
+        <!-- =================================================
+             AUDIOVISUALES
+        ================================================== -->
+
+        <section class="service-category" id="audiovisuales">
+
+            <div class="category-heading">
+
+                <div>
+
+                    <span class="category-number">
+                        01
+                    </span>
+
+                    <h2>Audiovisuales</h2>
+
+                </div>
+
+                <p>
+                    Equipos audiovisuales para acompañar
+                    celebraciones y actividades especiales.
+                </p>
+
+            </div>
+
+
+            <div class="services-carousel">
+
+                <article class="service-card-modern">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="{{ url_for('static', filename='img/pantallas.jpg') }}"
+                            alt="Pantallas LED">
+
+                    </div>
+
+                    <div class="service-card-info">
+
+                        <i class="fa-solid fa-tv"></i>
+
+                        <h3>Pantallas LED</h3>
+
+                        <p>
+                            Pantallas para mostrar contenido visual
+                            y complementar la ambientación.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="service-card-modern">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="{{ url_for('static', filename='img/sonido.jpg') }}"
+                            alt="Sonido para eventos">
+
+                    </div>
+
+                    <div class="service-card-info">
+
+                        <i class="fa-solid fa-volume-high"></i>
+
+                        <h3>Sonido</h3>
+
+                        <p>
+                            Equipo de sonido para acompañar
+                            celebraciones y actividades.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="service-card-modern">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="{{ url_for('static', filename='img/pantallaysonido.jpg') }}"
+                            alt="Pantallas y sonido">
+
+                    </div>
+
+                    <div class="service-card-info">
+
+                        <i class="fa-solid fa-photo-film"></i>
+
+                        <h3>Pantallas y sonido</h3>
+
+                        <p>
+                            Solución audiovisual para una experiencia
+                            más completa.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CATERING SERVICE
+        ================================================== -->
+
+        <section class="service-category" id="catering">
+
+            <div class="category-heading">
+
+                <div>
+
+                    <span class="category-number">
+                        02
+                    </span>
+
+                    <h2>Catering Service</h2>
+
+                </div>
+
+                <p>
+                    Opciones gastronómicas para acompañar
+                    y complementar tus celebraciones.
+                </p>
+
+            </div>
+
+
+            <div class="services-carousel">
+
+                <article class="service-card-modern">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="{{ url_for('static', filename='img/buffet1.jpg') }}"
+                            alt="Buffet">
+
+                    </div>
+
+                    <div class="service-card-info">
+
+                        <i class="fa-solid fa-utensils"></i>
+
+                        <h3>Buffet</h3>
+
+                        <p>
+                            Opciones de buffet para diferentes
+                            tipos de celebraciones.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="service-card-modern">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="{{ url_for('static', filename='img/charcuteria.jpg') }}"
+                            alt="Charcutería">
+
+                    </div>
+
+                    <div class="service-card-info">
+
+                        <i class="fa-solid fa-cheese"></i>
+
+                        <h3>Charcutería</h3>
+
+                        <p>
+                            Tablas y opciones de charcutería
+                            ideales para compartir.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="service-card-modern">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="{{ url_for('static', filename='img/emplatado.jpg') }}"
+                            alt="Emplatado">
+
+                    </div>
+
+                    <div class="service-card-info">
+
+                        <i class="fa-solid fa-plate-wheat"></i>
+
+                        <h3>Emplatado</h3>
+
+                        <p>
+                            Presentación cuidada de los alimentos
+                            para una experiencia elegante.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="service-card-modern">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="{{ url_for('static', filename='img/ensalada.jpg') }}"
+                            alt="Ensaladas">
+
+                    </div>
+
+                    <div class="service-card-info">
+
+                        <i class="fa-solid fa-bowl-food"></i>
+
+                        <h3>Ensaladas</h3>
+
+                        <p>
+                            Opciones de ensaladas para complementar
+                            diferentes menús.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="service-card-modern">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="{{ url_for('static', filename='img/mesadedulces.jpg') }}"
+                            alt="Mesa dulce">
+
+                    </div>
+
+                    <div class="service-card-info">
+
+                        <i class="fa-solid fa-cake-candles"></i>
+
+                        <h3>Mesa dulce</h3>
+
+                        <p>
+                            Una opción especial para complementar
+                            la celebración.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="service-card-modern">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="{{ url_for('static', filename='img/mesadulce2.jpg') }}"
+                            alt="Mesa dulce">
+
+                    </div>
+
+                    <div class="service-card-info">
+
+                        <i class="fa-solid fa-cookie-bite"></i>
+
+                        <h3>Mesa dulce</h3>
+
+                        <p>
+                            Diferentes presentaciones para acompañar
+                            momentos especiales.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SHOW
+        ================================================== -->
+
+        <section class="service-category" id="show">
+
+            <div class="category-heading">
+
+                <div>
+
+                    <span class="category-number">
+                        03
+                    </span>
+
+                    <h2>Show</h2>
+
+                </div>
+
+                <p>
+                    Animación y entretenimiento para darle
+                    movimiento y alegría a tu celebración.
+                </p>
+
+            </div>
+
+
+            <div class="services-carousel">
+
+                <article class="service-card-modern">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="{{ url_for('static', filename='img/comparsa.jpg') }}"
+                            alt="Comparsa">
+
+                    </div>
+
+                    <div class="service-card-info">
+
+                        <i class="fa-solid fa-drum"></i>
+
+                        <h3>Comparsa</h3>
+
+                        <p>
+                            Entretenimiento para darle energía
+                            y alegría a tu celebración.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="service-card-modern">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="{{ url_for('static', filename='img/comparsa2.jpg') }}"
+                            alt="Show de comparsa">
+
+                    </div>
+
+                    <div class="service-card-info">
+
+                        <i class="fa-solid fa-music"></i>
+
+                        <h3>Show y animación</h3>
+
+                        <p>
+                            Una alternativa de entretenimiento
+                            para crear un ambiente dinámico.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ALQUILER
+        ================================================== -->
+
+        <section class="service-category" id="alquiler">
+
+            <div class="category-heading">
+
+                <div>
+
+                    <span class="category-number">
+                        04
+                    </span>
+
+                    <h2>Alquiler</h2>
+
+                </div>
+
+                <p>
+                    Elementos disponibles para complementar
+                    el montaje y la comodidad de tu evento.
+                </p>
+
+            </div>
+
+
+            <div class="services-carousel">
+
+                <article class="service-card-modern">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="{{ url_for('static', filename='img/sheffins.jpg') }}"
+                            alt="Sheffins">
+
+                    </div>
+
+                    <div class="service-card-info">
+
+                        <i class="fa-solid fa-champagne-glasses"></i>
+
+                        <h3>Sheffins</h3>
+
+                        <p>
+                            Elementos disponibles para alquiler
+                            en diferentes celebraciones.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="service-card-modern">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="{{ url_for('static', filename='img/hielera.jpg') }}"
+                            alt="Hielera">
+
+                    </div>
+
+                    <div class="service-card-info">
+
+                        <i class="fa-solid fa-snowflake"></i>
+
+                        <h3>Hieleras</h3>
+
+                        <p>
+                            Una opción práctica para mantener
+                            las bebidas listas durante el evento.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="service-card-modern">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="{{ url_for('static', filename='img/toldolindo.jpg') }}"
+                            alt="Toldo">
+
+                    </div>
+
+                    <div class="service-card-info">
+
+                        <i class="fa-solid fa-tent"></i>
+
+                        <h3>Toldos</h3>
+
+                        <p>
+                            Toldos para acondicionar y proteger
+                            el espacio de tu celebración.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="service-card-modern">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="{{ url_for('static', filename='img/toldo1.jpg') }}"
+                            alt="Toldo para eventos">
+
+                    </div>
+
+                    <div class="service-card-info">
+
+                        <i class="fa-solid fa-tent"></i>
+
+                        <h3>Toldos para eventos</h3>
+
+                        <p>
+                            Opciones para diferentes montajes
+                            y espacios de celebración.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="service-card-modern">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="{{ url_for('static', filename='img/centro.jpg') }}"
+                            alt="Centro de mesa">
+
+                    </div>
+
+                    <div class="service-card-info">
+
+                        <i class="fa-solid fa-sparkles"></i>
+
+                        <h3>Centros de mesa</h3>
+
+                        <p>
+                            Detalles decorativos para complementar
+                            la presentación de las mesas.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACTO -->
+        <section class="services-contact">
+
+            <div class="section-title">
+
+                <h2>¿Planeando un evento?</h2>
+
+                <p>
+                    Contanos qué tenés en mente y conversemos sobre
+                    las opciones disponibles para tu celebración.
+                </p>
+
+            </div>
+
+            <a href="{{ url_for('contacto') }}" class="btn-gold">
+                Contactarnos
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            © 2026 Eventos Especiales VG. Todos los derechos reservados.
+        </p>
+    </footer>
 
 </body>
 </html>

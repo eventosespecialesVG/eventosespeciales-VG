@@ -5,426 +5,382 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <title>Eventos Especiales VG - Organización de eventos</title>
+    <title>Eventos Especiales VG</title>
 
-    <meta
-        name="description"
-        content="Eventos Especiales VG ofrece buffet, comparsa, pantallas LED, sonido, catering y soluciones para eventos en Costa Rica."
-    >
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/styles.css') }}">
 
-    <meta
-        name="keywords"
-        content="eventos, buffet, catering, comparsa, pantallas LED, sonido, Costa Rica"
-    >
-
-    <meta name="author" content="Eventos Especiales VG">
-
-    <link
-        rel="stylesheet"
-        href="{{ url_for('static', filename='css/styles.css') }}"
-    >
-
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
-
-    <link rel="icon" href="/static/img/favicon.png" type="image/png">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
+
 <body>
 
-{% include 'navbar.html' %}
+    {% include 'navbar.html' %}
 
-<!-- =====================================================
-     HERO
-     ===================================================== -->
 
-<header class="hero-black">
+    <!-- =================================================
+         HERO
+    ================================================== -->
 
-    <div class="hero-overlay-box">
+    <section class="hero">
 
-        <h1>Eventos Especiales VG</h1>
+        <div class="hero-content">
+
+            <h1>
+                Eventos Especiales VG
+            </h1>
+
+            <h2>
+                hacemos de tus momentos algo inolvidable
+            </h2>
+
+            <p>
+                Nos encargamos de crear experiencias especiales
+                para todo tipo de celebraciones, cuidando cada
+                detalle para que tu evento sea exactamente como
+                lo imaginaste.
+            </p>
+
+            <a href="{{ url_for('servicios') }}"
+               class="btn-gold">
+
+                Ver nuestros servicios
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         MOMENTOS ESPECIALES
+    ================================================== -->
+
+    <section class="home-moments">
+
+        <div class="section-title">
+
+            <h2>
+                Conocé nuestro trabajo
+            </h2>
+
+            <p>
+                Una pequeña muestra de las experiencias que
+                podemos crear para tus eventos.
+            </p>
+
+        </div>
+
+
+        <div class="moments-grid">
+
+            <div class="moment-item">
+
+                <img
+                    src="{{ url_for('static', filename='img/charcuteria.jpg') }}"
+                    alt="Charcutería para eventos">
+
+            </div>
+
+
+            <div class="moment-item">
+
+                <img
+                    src="{{ url_for('static', filename='img/hero.jpg') }}"
+                    alt="Comparsa para eventos">
+
+            </div>
+
+
+            <div class="moment-item">
+
+                <img
+                    src="{{ url_for('static', filename='img/pantallas.jpg') }}"
+                    alt="Pantallas para eventos">
+
+            </div>
+
+
+            <div class="moment-item">
+
+                <img
+                    src="{{ url_for('static', filename='img/toldo2.jpg') }}"
+                    alt="Montaje de evento">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         QUIÉNES SOMOS
+    ================================================== -->
+
+    <section class="about">
+
+        <div class="about-content">
+
+            <h2>
+                ¿Quiénes somos?
+            </h2>
+
+            <p>
+                En Eventos Especiales VG nos dedicamos a brindar
+                servicios para celebraciones y actividades especiales.
+            </p>
+
+            <p>
+                Nuestro objetivo es ayudarte a crear un evento
+                bonito, organizado y memorable, ofreciendo
+                diferentes opciones para hacer realidad lo que
+                tenés en mente.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         MISIÓN / VISIÓN / DIFERENCIAL
+    ================================================== -->
+
+    <section class="quienes-somos">
+
+        <div class="section-title">
+
+            <h2>
+                  Sobre nosotros
+            </h2>
+
+            <p>
+                Nuestra forma de trabajar y el compromiso que
+                tenemos con cada evento.
+            </p>
+
+        </div>
+
+
+        <div class="qs-grid">
+
+
+            <div class="qs-item">
+
+                <h3>
+                    Misión
+                </h3>
+
+                <p>
+                    Crear experiencias únicas mediante la
+                    planificación de eventos personalizados,
+                    ofreciendo un servicio profesional y de
+                    excelencia que supera las expectativas de
+                    nuestros clientes.
+                </p>
+
+            </div>
+
+
+            <div class="qs-item">
+
+                <h3>
+                    Visión
+                </h3>
+
+                <p>
+                    Ser empresa líder en la creación de
+                    entretenimiento a nivel nacional.
+                    Brindando satisfacción en servicio,
+                    precio y calidad.
+                </p>
+
+            </div>
+
+
+            <div class="qs-item">
+
+                <h3>
+                    Diferencial
+                </h3>
+
+                <p>
+                    Nuestro diferencial es brindar todo lo
+                    necesario para un evento exitoso en un
+                    solo proveedor, garantizando calidad,
+                    puntualidad y atención personalizada
+                    desde la planificación hasta la ejecución.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         SERVICIOS DESTACADOS
+    ================================================== -->
+
+    <section class="services-preview">
+
+        <div class="section-title">
+
+            <h2>
+                Nuestros servicios
+            </h2>
+
+            <p>
+                Conocé algunas de las opciones que tenemos
+                disponibles para hacer especial tu evento.
+            </p>
+
+        </div>
+
+
+        <div class="preview-grid">
+
+
+            <article class="preview-card">
+
+                <img
+                    src="{{ url_for('static', filename='img/buffet1.jpg') }}"
+                    alt="Catering Service">
+
+                <div class="preview-card-content">
+
+                    <h3>
+                        Catering Service
+                    </h3>
+
+                    <p>
+                        Opciones gastronómicas para acompañar
+                        tus celebraciones.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="preview-card">
+
+                <img
+                    src="{{ url_for('static', filename='img/pantallaysonido.jpg') }}"
+                    alt="Audiovisuales">
+
+                <div class="preview-card-content">
+
+                    <h3>
+                        Audiovisuales
+                    </h3>
+
+                    <p>
+                        Pantallas y sonido para complementar
+                        la experiencia de tu evento.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="preview-card">
+
+                <img
+                    src="{{ url_for('static', filename='img/toldolindo.jpg') }}"
+                    alt="Alquiler para eventos">
+
+                <div class="preview-card-content">
+
+                    <h3>
+                        Alquiler
+                    </h3>
+
+                    <p>
+                        Elementos para complementar el montaje
+                        de diferentes celebraciones.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <div style="text-align: center; margin-top: 40px;">
+
+            <a href="{{ url_for('servicios') }}"
+               class="btn-gold">
+
+                Ver todos los servicios
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         CONTACTO
+    ================================================== -->
+
+    <section class="contact">
+
+        <div class="section-title">
+
+            <h2>
+                Hablemos de tu evento
+            </h2>
+
+            <p>
+                Contanos qué necesitás y te ayudamos a encontrar
+                las opciones ideales para tu celebración.
+            </p>
+
+        </div>
+
+
+        <div style="text-align: center;">
+
+            <a href="{{ url_for('contacto') }}"
+               class="btn-gold">
+
+                Contactarnos
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <footer>
 
         <p>
-            Tu idea, nuestra ejecución, lo hacemos realidad
+            © 2026 Eventos Especiales VG.
+            Todos los derechos reservados.
         </p>
 
-        <a
-            href="https://wa.me/50663524165"
-            target="_blank"
-            class="btn-gold"
-        >
-            Contáctanos
-        </a>
+    </footer>
 
-    </div>
-
-</header>
-
-
-<!-- =====================================================
-     GALERÍA
-     ===================================================== -->
-
-<section class="section carrusel">
-
-    <h2>Galería de eventos</h2>
-
-    <p class="section-subtitle">
-        Algunos de los momentos y servicios que forman parte
-        de nuestras experiencias.
-    </p>
-
-    <div
-        class="carousel"
-        aria-label="Carrusel de imágenes"
-    >
-
-        <div class="slide">
-            <img
-                src="/static/img/comparsa.jpg"
-                alt="Comparsa y animación"
-            >
-        </div>
-
-        <div class="slide">
-            <img
-                src="/static/img/comparsa2.jpg"
-                alt="Comparsa"
-            >
-        </div>
-
-        <div class="slide">
-            <img
-                src="/static/img/pantallas.jpg"
-                alt="Pantallas LED"
-            >
-        </div>
-
-        <div class="slide">
-            <img
-                src="/static/img/pantallaysonido.jpg"
-                alt="Pantallas y sonido"
-            >
-        </div>
-
-        <div class="slide">
-            <img
-                src="/static/img/sonido.jpg"
-                alt="Sonido profesional"
-            >
-        </div>
-
-        <div class="slide">
-            <img
-                src="/static/img/buffet1.jpg"
-                alt="Buffet"
-            >
-        </div>
-
-        <div class="slide">
-            <img
-                src="/static/img/charcuteria.jpg"
-                alt="Charcutería"
-            >
-        </div>
-
-        <div class="slide">
-            <img
-                src="/static/img/mesadedulces.jpg"
-                alt="Mesa de dulces"
-            >
-        </div>
-
-        <div class="slide">
-            <img
-                src="/static/img/toldolindo.jpg"
-                alt="Toldo para eventos"
-            >
-        </div>
-
-    </div>
-
-    <div class="carousel-controls">
-
-        <button
-            class="carousel-btn prev"
-            aria-label="Anterior"
-        >
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
-
-        <button
-            class="carousel-btn next"
-            aria-label="Siguiente"
-        >
-            <i class="fa-solid fa-chevron-right"></i>
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     QUIÉNES SOMOS
-     ===================================================== -->
-
-<section class="section quienes-somos">
-
-    <h2>Quiénes somos</h2>
-
-    <p>
-        En <strong>Eventos Especiales VG</strong>, convertimos ideas
-        en experiencias memorables. Nuestro equipo combina creatividad,
-        innovación y atención al detalle para que cada evento brille
-        con personalidad propia.
-    </p>
-
-    <div class="qs-grid">
-
-        <div class="qs-item">
-
-            <h3>Misión</h3>
-
-            <p>
-                Crear experiencias únicas mediante la planificación
-                de eventos personalizados, ofreciendo un servicio
-                profesional y de excelencia que supera las expectativas
-                de nuestros clientes.
-            </p>
-
-        </div>
-
-
-        <div class="qs-item">
-
-            <h3>Visión</h3>
-
-            <p>
-                Ser empresa líder en la creación de entretenimiento
-                a nivel nacional, brindando satisfacción en servicio,
-                precio y calidad.
-            </p>
-
-        </div>
-
-
-        <div class="qs-item">
-
-            <h3>Diferencial</h3>
-
-            <p>
-                Nuestro diferencial es brindar todo lo necesario
-                para un evento exitoso en un solo proveedor,
-                garantizando calidad, puntualidad y atención
-                personalizada desde la planificación hasta la ejecución.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     SERVICIOS DESTACADOS
-     ===================================================== -->
-
-<section class="section servicios">
-
-    <h2>Servicios</h2>
-
-    <p class="section-subtitle">
-        Gastronomía, entretenimiento y ambientación para
-        hacer de cada celebración un momento especial.
-    </p>
-
-    <div class="services-grid">
-
-        <figure class="service-card">
-
-            <img
-                src="/static/img/buffet1.jpg"
-                alt="Buffet de lujo"
-            >
-
-            <figcaption>
-                Buffet de lujo
-            </figcaption>
-
-        </figure>
-
-
-        <figure class="service-card">
-
-            <img
-                src="/static/img/comparsa.jpg"
-                alt="Comparsa y animación"
-            >
-
-            <figcaption>
-                Comparsa y animación
-            </figcaption>
-
-        </figure>
-
-
-        <figure class="service-card">
-
-            <img
-                src="/static/img/pantallas.jpg"
-                alt="Pantallas LED"
-            >
-
-            <figcaption>
-                Pantallas LED
-            </figcaption>
-
-        </figure>
-
-
-        <figure class="service-card">
-
-            <img
-                src="/static/img/sonido.jpg"
-                alt="Sonido profesional"
-            >
-
-            <figcaption>
-                Sonido profesional
-            </figcaption>
-
-        </figure>
-
-
-        <figure class="service-card">
-
-            <img
-                src="/static/img/mesadedulces.jpg"
-                alt="Mesa de dulces"
-            >
-
-            <figcaption>
-                Mesa de dulces
-            </figcaption>
-
-        </figure>
-
-
-        <figure class="service-card">
-
-            <img
-                src="/static/img/toldolindo.jpg"
-                alt="Toldos para eventos"
-            >
-
-            <figcaption>
-                Toldos y ambientación
-            </figcaption>
-
-        </figure>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CONTACTO
-     ===================================================== -->
-
-{% include 'contacto.html' %}
-
-
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
-
-<footer>
-
-    <div class="footer-top">
-
-        <div class="social-buttons">
-
-            <a
-                href="https://facebook.com/eventosespecialesvg"
-                target="_blank"
-                class="social-icon"
-                aria-label="Facebook"
-            >
-                <i class="fab fa-facebook-f"></i>
-            </a>
-
-            <a
-                href="https://instagram.com/eventosespecialesvg"
-                target="_blank"
-                class="social-icon"
-                aria-label="Instagram"
-            >
-                <i class="fab fa-instagram"></i>
-            </a>
-
-            <a
-                href="https://wa.me/50663524165"
-                target="_blank"
-                class="social-icon"
-                aria-label="WhatsApp"
-            >
-                <i class="fab fa-whatsapp"></i>
-            </a>
-
-        </div>
-
-    </div>
-
-    <p class="footer-copy">
-        &copy; 2026 Eventos Especiales VG
-    </p>
-
-</footer>
-
-
-<!-- =====================================================
-     CARRUSEL
-     ===================================================== -->
-
-<script>
-
-    const carousel = document.querySelector('.carousel');
-    const prev = document.querySelector('.carousel-btn.prev');
-    const next = document.querySelector('.carousel-btn.next');
-
-    if (carousel && prev && next) {
-
-        prev.addEventListener('click', () => {
-
-            carousel.scrollBy({
-                left: -330,
-                behavior: 'smooth'
-            });
-
-        });
-
-        next.addEventListener('click', () => {
-
-            carousel.scrollBy({
-                left: 330,
-                behavior: 'smooth'
-            });
-
-        });
-
-    }
-
-</script>
 
 </body>
 </html>
- 
