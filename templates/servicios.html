@@ -1,57 +1,296 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<title>Servicios - Eventos Especiales VG</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Servicios - Eventos Especiales VG</title>
+
+    <meta
+        name="description"
+        content="Conocé los servicios de Eventos Especiales VG: catering, buffet, comparsa, pantallas LED, sonido, toldos, decoración y más."
+    >
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="icon" href="/static/img/favicon.png" type="image/png">
 </head>
+
 <body>
 
-  {% include 'navbar.html' %}
+{% include 'navbar.html' %}
+
 <section class="section servicios-page">
-<h2>Servicios que ofrecemos</h2>
-<div class="services-diff-grid">
-<!-- Buffet -->
-<div class="service-card buffet">
-<img src="static/img/catering.jpg" alt="Buffet de lujo">
-<div class="overlay">
-<i class="fa-solid fa-utensils"></i>
-<h3>Buffet de lujo</h3>
-<p>Gastronomía variada, elegante y deliciosa para todo tipo de eventos.</p>
-</div>
-</div>
-<!-- Comparsa / Animación -->
-<div class="service-card comparsa">
-<img src="static/img/comparsa.jpg" alt="Comparsa y animación">
-<div class="overlay">
-<i class="fa-solid fa-masks-theater"></i>
-<h3>Comparsa y animación</h3>
-<p>Baile, ritmo y energía para encender la fiesta con estilo.</p>
-</div>
-</div>
-<!-- Pantallas LED -->
-<div class="service-card pantallas">
-<img src="static/img/pantallas.jpg" alt="Pantallas LED">
-<div class="overlay">
-<i class="fa-solid fa-tv"></i>
-<h3>Pantallas LED</h3>
-<p>Visuales impactantes con tecnología de alta definición.</p>
-</div>
-</div>
-<!-- Sonido -->
-<div class="service-card sonido">
-<img src="static/img/sonido.jpg" alt="Sonido profesional">
-<div class="overlay">
-<i class="fa-solid fa-volume-high"></i>
-<h3>Sonido profesional</h3>
-<p>Audio potente y claro para que tu evento se escuche perfecto.</p>
-</div>
-</div>
-</div>
+
+    <h2>Servicios que ofrecemos</h2>
+
+    <p class="services-intro">
+        En Eventos Especiales VG contamos con diferentes opciones para hacer
+        de cada celebración una experiencia especial, cuidando cada detalle
+        desde la gastronomía hasta la ambientación y el entretenimiento.
+    </p>
+
+    <div class="services-diff-grid">
+
+        <!-- BUFFET -->
+        <div class="service-card buffet">
+            <img src="/static/img/buffet1.jpg" alt="Buffet de lujo">
+
+            <div class="overlay">
+                <i class="fa-solid fa-utensils"></i>
+                <h3>Buffet de lujo</h3>
+                <p>
+                    Opciones gastronómicas variadas para acompañar
+                    celebraciones de todo tipo.
+                </p>
+            </div>
+        </div>
+
+        <!-- CHARCUTERÍA -->
+        <div class="service-card buffet">
+            <img src="/static/img/charcuteria.jpg" alt="Charcutería">
+
+            <div class="overlay">
+                <i class="fa-solid fa-cheese"></i>
+                <h3>Charcutería</h3>
+                <p>
+                    Presentaciones cuidadas y variedad de opciones
+                    para compartir.
+                </p>
+            </div>
+        </div>
+
+        <!-- EMPLATADO -->
+        <div class="service-card buffet">
+            <img src="/static/img/emplatado.jpg" alt="Servicio de emplatado">
+
+            <div class="overlay">
+                <i class="fa-solid fa-plate-wheat"></i>
+                <h3>Emplatado</h3>
+                <p>
+                    Presentación elegante de los alimentos para
+                    darle un toque especial a cada evento.
+                </p>
+            </div>
+        </div>
+
+        <!-- ENSALADAS -->
+        <div class="service-card buffet">
+            <img src="/static/img/ensalada.jpg" alt="Ensaladas">
+
+            <div class="overlay">
+                <i class="fa-solid fa-leaf"></i>
+                <h3>Opciones frescas</h3>
+                <p>
+                    Ensaladas y acompañamientos frescos para complementar
+                    diferentes propuestas gastronómicas.
+                </p>
+            </div>
+        </div>
+
+        <!-- COMPARSA -->
+        <div class="service-card comparsa">
+            <img src="/static/img/comparsa.jpg" alt="Comparsa y animación">
+
+            <div class="overlay">
+                <i class="fa-solid fa-masks-theater"></i>
+                <h3>Comparsa y animación</h3>
+                <p>
+                    Ritmo, baile y energía para darle vida
+                    a la celebración.
+                </p>
+            </div>
+        </div>
+
+        <!-- COMPARSA 2 -->
+        <div class="service-card comparsa">
+            <img src="/static/img/comparsa2.jpg" alt="Comparsa">
+
+            <div class="overlay">
+                <i class="fa-solid fa-music"></i>
+                <h3>Entretenimiento</h3>
+                <p>
+                    Animación para crear un ambiente dinámico
+                    y lleno de energía.
+                </p>
+            </div>
+        </div>
+
+        <!-- PANTALLAS -->
+        <div class="service-card pantallas">
+            <img src="/static/img/pantallas.jpg" alt="Pantallas LED">
+
+            <div class="overlay">
+                <i class="fa-solid fa-tv"></i>
+                <h3>Pantallas LED</h3>
+                <p>
+                    Soluciones visuales para darle mayor impacto
+                    a tu evento.
+                </p>
+            </div>
+        </div>
+
+        <!-- PANTALLAS Y SONIDO -->
+        <div class="service-card pantallas">
+            <img src="/static/img/pantallaysonido.jpg" alt="Pantallas y sonido">
+
+            <div class="overlay">
+                <i class="fa-solid fa-display"></i>
+                <h3>Pantallas y sonido</h3>
+                <p>
+                    Una combinación de imagen y audio para
+                    una experiencia más completa.
+                </p>
+            </div>
+        </div>
+
+        <!-- SONIDO -->
+        <div class="service-card sonido">
+            <img src="/static/img/sonido.jpg" alt="Sonido profesional">
+
+            <div class="overlay">
+                <i class="fa-solid fa-volume-high"></i>
+                <h3>Sonido profesional</h3>
+                <p>
+                    Audio claro y potente para acompañar
+                    cada momento de la celebración.
+                </p>
+            </div>
+        </div>
+
+        <!-- SHEFFINS -->
+        <div class="service-card buffet">
+            <img src="/static/img/sheffins.jpg" alt="Servicio gastronómico">
+
+            <div class="overlay">
+                <i class="fa-solid fa-kitchen-set"></i>
+                <h3>Servicio gastronómico</h3>
+                <p>
+                    Equipamiento y presentación para mantener
+                    los alimentos listos durante el evento.
+                </p>
+            </div>
+        </div>
+
+        <!-- HIELERA -->
+        <div class="service-card decoracion">
+            <img src="/static/img/hielera.jpg" alt="Hielera para eventos">
+
+            <div class="overlay">
+                <i class="fa-solid fa-glass-water"></i>
+                <h3>Hieleras</h3>
+                <p>
+                    Soluciones prácticas para mantener bebidas
+                    listas y a la temperatura adecuada.
+                </p>
+            </div>
+        </div>
+
+        <!-- TOLDOS -->
+        <div class="service-card toldos">
+            <img src="/static/img/toldolindo.jpg" alt="Toldos para eventos">
+
+            <div class="overlay">
+                <i class="fa-solid fa-tent"></i>
+                <h3>Toldos</h3>
+                <p>
+                    Espacios protegidos y preparados para
+                    diferentes tipos de celebraciones.
+                </p>
+            </div>
+        </div>
+
+        <!-- TOLDO 1 -->
+        <div class="service-card toldos">
+            <img src="/static/img/toldo1.jpg" alt="Montaje de toldo">
+
+            <div class="overlay">
+                <i class="fa-solid fa-umbrella"></i>
+                <h3>Montaje de toldos</h3>
+                <p>
+                    Opciones de montaje para adaptar el espacio
+                    a las necesidades del evento.
+                </p>
+            </div>
+        </div>
+
+        <!-- MESA DE DULCES -->
+        <div class="service-card decoracion">
+            <img src="/static/img/mesadedulces.jpg" alt="Mesa de dulces">
+
+            <div class="overlay">
+                <i class="fa-solid fa-cake-candles"></i>
+                <h3>Mesa de dulces</h3>
+                <p>
+                    Presentaciones dulces para complementar
+                    celebraciones y momentos especiales.
+                </p>
+            </div>
+        </div>
+
+        <!-- CENTROS DE MESA -->
+        <div class="service-card decoracion">
+            <img src="/static/img/centro.jpg" alt="Centros de mesa">
+
+            <div class="overlay">
+                <i class="fa-solid fa-gem"></i>
+                <h3>Centros de mesa</h3>
+                <p>
+                    Detalles decorativos para darle personalidad
+                    y elegancia a cada espacio.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
 </section>
- 
- 
-</section>
+
+<footer>
+    <div class="footer-top">
+        <div class="social-buttons">
+
+            <a
+                href="https://facebook.com/eventosespecialesvg"
+                target="_blank"
+                class="social-icon"
+                aria-label="Facebook"
+            >
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a
+                href="https://instagram.com/eventosespecialesvg"
+                target="_blank"
+                class="social-icon"
+                aria-label="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a
+                href="https://wa.me/50663524165"
+                target="_blank"
+                class="social-icon"
+                aria-label="WhatsApp"
+            >
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+        </div>
+    </div>
+
+    <p class="footer-copy">
+        &copy; 2026 Eventos Especiales VG
+    </p>
+</footer>
+
 </body>
 </html>
- 
